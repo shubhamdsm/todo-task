@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./styles.css";
 
 export default function App() {
@@ -34,6 +34,17 @@ export default function App() {
     setEditInput("");
     setEditTodo(null);
   }
+
+  useEffect(() => {
+    const todos = JSON.parse(localStorage.getItem("todo"));
+    if (todos) {
+      setTodos(todos);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("todo", JSON.stringify(todos));
+  }, [todos]);
 
   return (
     <div className="App">
