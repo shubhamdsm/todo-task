@@ -1,6 +1,5 @@
 # todo-task
 
-[Link](https://z2otr.csb.app/)
 
 **REQUIREMENTS:**
 
